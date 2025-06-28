@@ -9,7 +9,7 @@ import sys
 import subprocess
 from dotenv import load_dotenv
 
-load_dotnev()
+load_dotenv()
 
 def install_dependencies():
     """Install Python dependencies"""
