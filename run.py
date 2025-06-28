@@ -7,19 +7,9 @@ Simple script to start the EduVerse multi-agent learning system
 import os
 import sys
 import subprocess
+from dotenv import load_dotenv
 
-def check_env_file():
-    """Check if .env file exists"""
-    if not os.path.exists('.env'):
-        print("❌ .env file not found!")
-        print("📝 Please copy .env.example to .env and fill in your API keys")
-        print("📖 Check API_KEYS_GUIDE.md for detailed instructions on obtaining API keys")
-        print("\nQuick setup:")
-        print("1. cp .env.example .env")
-        print("2. Edit .env with your actual API keys")
-        print("3. Run python test_setup.py to verify")
-        return False
-    return True
+load_dotnev()
 
 def install_dependencies():
     """Install Python dependencies"""
@@ -53,15 +43,6 @@ def main():
     print("🎓 EduVerse - AI-Powered Learning Backend")
     print("=" * 50)
     
-    # Check environment file
-    if not check_env_file():
-        return
-    
-    # Ask user if they want to install dependencies
-    install_deps = input("📦 Install/Update dependencies? (y/n): ").lower().strip()
-    if install_deps in ['y', 'yes']:
-        if not install_dependencies():
-            return
     
     # Start the server
     start_server()
